@@ -31,6 +31,9 @@
   "bin": {
     "wt": "dist/main.js"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "bundleDependencies": false,
   "dependencies": {
     "chalk": "^4.0.0",
