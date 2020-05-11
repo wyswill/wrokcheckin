@@ -1,28 +1,4 @@
 {
-  "_from": "wrokcheckin",
-  "_id": "wrokcheckin@1.0.9",
-  "_inBundle": false,
-  "_integrity": "sha1-xzzdBYMyu9CK8xbtg/GpKjdT4y8=",
-  "_location": "/wrokcheckin",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "wrokcheckin",
-    "name": "wrokcheckin",
-    "escapedName": "wrokcheckin",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npm.taobao.org/wrokcheckin/download/wrokcheckin-1.0.9.tgz",
-  "_shasum": "c73cdd058332bbd08af316ed83f1a92a3753e32f",
-  "_spec": "wrokcheckin",
-  "_where": "C:\\Users\\www11",
   "author": {
     "name": "wyswill",
     "email": "1151373571@qq.com",
@@ -31,17 +7,12 @@
   "bin": {
     "wtc": "dist/main.js"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "bundleDependencies": false,
   "dependencies": {
     "chalk": "^4.0.0",
     "commander": "^5.0.0",
     "inquirer": "^7.1.0",
     "log-symbols": "^3.0.0"
   },
-  "deprecated": false,
   "description": "记录每天打卡的时间、根据上班时间计算下班的时间。默认工作时间九个半小时，也可以通过config选项来指定",
   "devDependencies": {
     "@types/commander-remaining-args": "^1.2.1",
@@ -53,5 +24,5 @@
     "test": "ts-node src/main.ts -H 9 -M 10",
     "test2": "ts-node src/main.ts"
   },
-  "version": "1.0.9"
+  "version": "1.0.10"
 }
