@@ -24,5 +24,5 @@
     "test": "ts-node src/main.ts -H 9 -M 10",
     "test2": "ts-node src/main.ts"
   },
-  "version": "1.0.10"
+  "version": "1.0.11"
 }
