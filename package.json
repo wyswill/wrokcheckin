@@ -26,10 +26,10 @@
   "author": {
     "name": "wyswill",
     "email": "1151373571@qq.com",
-    "url": "github.com/wyswill"
+    "url": "https://www.github.com/wyswill"
   },
   "bin": {
-    "wt": "dist/main.js"
+    "wtc": "dist/main.js"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
