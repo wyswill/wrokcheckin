@@ -1,9 +1,5 @@
 {
-  "author": {
-    "name": "wyswill",
-    "email": "1151373571@qq.com",
-    "url": "https://www.github.com/wyswill"
-  },
+  "author": "wyswill <1151373571@qq.com> (https://www.github.com/wyswill)",
   "bin": {
     "wtc": "dist/main.js"
   },
@@ -15,14 +11,21 @@
   },
   "description": "记录每天打卡的时间、根据上班时间计算下班的时间。默认工作时间九个半小时，也可以通过config选项来指定",
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/commander": "^2.12.2",
     "@types/commander-remaining-args": "^1.2.1",
-    "@types/inquirer": "^6.5.0"
+    "@types/inquirer": "^6.5.0",
+    "@types/log-symbols": "^3.0.0",
+    "@types/node": "^14.0.1"
   },
   "name": "wrokcheckin",
   "scripts": {
     "build": "tsc && sudo npm  link",
-    "test": "ts-node src/main.ts -H 9 -M 10",
-    "test2": "ts-node src/main.ts"
+    "ts": "ts-node src/main.ts -H 9 -M 10",
+    "ts2": "ts-node src/main.ts"
   },
-  "version": "1.0.11"
+  "version": "1.0.11",
+  "main": "index.js",
+  "repository": "https://github.com/wyswill/wrokcheckin.git",
+  "license": "MIT"
 }
