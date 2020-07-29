@@ -59,29 +59,25 @@ program
       tm.lodeConfig()
         .lodeData()
         .then(() => {
-          const t = new Date();
+          const time_arg = program.args[0];
+          let t = new Date();
+          if (time_arg) {
+            const reg = /(\d{1,2}):(\d{1,2})/gi;
+            if (reg.test(time_arg)) {
+              t.setHours(Number(time_arg.split(":")[0]), Number(time_arg.split(":")[1]));
+            }
+          }
           H = program.hour || t.getHours();
           M = program.mine || t.getMinutes();
           LH = program.leaveHoure || tm.config.lh;
           LM = program.leaveMine || tm.config.lm;
           let workTime: Date;
-          if (tm.db[dateToFlag(t)]) workTime = new Date(tm.db[dateToFlag(t)]);
-          else
-            workTime =
-              program.hour && program.mine ? new Date(t.setHours(H, M)) : t;
-          const leaveTime: Date = new Date(
-            workTime.getTime() + pressMs(LH, LM)
-          );
-          console.log(
-            symbols.success,
-            chalk.bgBlue("打卡时间:" + dateToFlag(workTime, true))
-          );
-          console.log(
-            symbols.warning,
-            chalk.bgRed("下班时间:" + dateToFlag(leaveTime, true))
-          );
-
-          if (!tm.db[dateToFlag(workTime)]) {
+          if (tm.db[dateToFlag(t)] && !time_arg) workTime = new Date(tm.db[dateToFlag(t)]);
+          else workTime = program.hour && program.mine ? new Date(t.setHours(H, M)) : t;
+          const leaveTime: Date = new Date(workTime.getTime() + pressMs(LH, LM));
+          console.log(symbols.success, chalk.bgBlue("打卡时间:" + dateToFlag(workTime, true)));
+          console.log(symbols.warning, chalk.bgRed("下班时间:" + dateToFlag(leaveTime, true)));
+          if (!tm.db[dateToFlag(workTime)] && !time_arg) {
             tm.updateDate(dateToFlag(workTime), workTime.getTime());
             tm.save();
           }
@@ -106,9 +102,8 @@ function pressMs(h: number = 0, m: number = 0): number {
  * 将date对象转换为flag字符串
  * @param date
  * @param showMore
+ * @returns y/m/d-h-m
  */
 function dateToFlag(date: Date, showMore: boolean = false): string {
-  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}${
-    showMore ? `-${date.getHours()}:${date.getMinutes()}` : ""
-  }`;
+  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}${showMore ? `-${date.getHours()}:${date.getMinutes()}` : ""}`;
 }

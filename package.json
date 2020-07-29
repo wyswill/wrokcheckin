@@ -1,7 +1,7 @@
 {
   "author": "wyswill <1151373571@qq.com> (https://www.github.com/wyswill)",
   "bin": {
-    "wtc": "dist/main.js"
+    "wt": "dist/main.js"
   },
   "dependencies": {
     "chalk": "^4.0.0",
