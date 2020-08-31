@@ -24,7 +24,7 @@
     "ts": "ts-node src/main.ts -H 9 -M 10",
     "ts2": "ts-node src/main.ts"
   },
-  "version": "1.0.11",
+  "version": "1.1.14",
   "main": "index.js",
   "repository": "https://github.com/wyswill/wrokcheckin.git",
   "license": "MIT"

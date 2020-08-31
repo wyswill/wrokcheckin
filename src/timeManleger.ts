@@ -1,4 +1,4 @@
-/// <reference path="./type.d.ts" />
+/// <reference path="./types/type.d.ts" />
 const fs = require("fs"),
   os = require("os");
 const homepath = os.homedir();

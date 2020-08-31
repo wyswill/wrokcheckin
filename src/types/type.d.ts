@@ -1,7 +1,7 @@
-type STORE = {
+declare type STORE = {
   [index: string]: number
 }
-type answrod = {
+declare type answrod = {
   lh: number,
   lm: number
 }

@@ -9,6 +9,9 @@
     "allowJs": true,
     "lib": [
       "ES6"
+    ],
+    "typeRoots": [
+      "./src/types"
     ]
   },
   "exclude": [
@@ -16,6 +19,6 @@
   ],
   "include": [
     "./src/**/*.ts",
-    "src/lib/*.d.ts"
+    "src/types/*.d.ts"
   ]
 }
