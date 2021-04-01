@@ -1,3 +1,9 @@
+/*
+ * @LastEditors: wyswill
+ * @Description: 
+ * @Date: 2021-04-01 15:30:35
+ * @LastEditTime: 2021-04-01 15:32:48
+ */
 /// <reference path="./types/type.d.ts" />
 const fs = require("fs"),
   os = require("os");
@@ -36,7 +42,7 @@ export default class timeManleger {
    * 加载本地缓存
    */
   lodeData() {
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
       fs.exists(dbPath, (exists: boolean) => {
         if (exists) {
           const readStream = fs.createReadStream(dbPath);
