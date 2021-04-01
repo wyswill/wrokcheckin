@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import program from "commander";
-import * as inquirer from "inquirer";
+import inquirer from "inquirer";
 import chalk from "chalk";
 import symbols from "log-symbols";
 import timeManleger from "./timeManleger";
